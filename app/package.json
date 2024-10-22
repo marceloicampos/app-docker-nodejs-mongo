@@ -1,0 +1,11 @@
+{
+  "name": "dev-with-docker",
+  "version": "1.0.0",
+  "description": "app with Docker, nodeJS and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "marceloicampos",
+  "license": "MIT"
+}
