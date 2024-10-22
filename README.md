@@ -17,7 +17,7 @@ Step 1: go to main folder start mongodb and mongo-express on main folder with
 
     docker compose up
 
-_Access the mongo-express under http://localhost:8081 from your browser_
+_Access the mongo-express under http://localhost:8081 from your browser login root password 123456_
 
 Step 2: in mongo-express UI - create a new database "my-db"
 
