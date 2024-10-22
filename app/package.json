@@ -10,8 +10,8 @@
     "author": "marceloicampos",
     "license": "MIT",
     "dependencies": {
-        "body-parser": "^1.20.3",
-        "express": "^4.21.1",
-        "mongodb": "^6.10.0"
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "mongodb": "^3.3.3"
     }
 }
