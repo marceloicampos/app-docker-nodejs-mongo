@@ -16,17 +16,23 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'))
 })
 
-app.get('/profile-picture', function (req, res) {
+app.get('/profile-picture-1', function (req, res) {
     let img = fs.readFileSync(path.join(__dirname, 'images/profile-1.jpg'))
     res.writeHead(200, { 'Content-Type': 'image/jpg' })
     res.end(img, 'binary')
 })
 
+app.get('/profile-picture-2', function (req, res) {
+	let img = fs.readFileSync(path.join(__dirname, 'images/profile-2.jpg'))
+	res.writeHead(200, { 'Content-Type': 'image/jpg' })
+	res.end(img, 'binary')
+})
+
 // use when starting application locally
-let mongoUrlLocal = 'mongodb://root:pwd123@localhost:27017'
+let mongoUrlLocal = 'mongodb://admin:pwd123@localhost:27017'
 
 // use when starting application as docker container
-let mongoUrlDocker = 'mongodb://root:pwd123@mongodb'
+let mongoUrlDocker = 'mongodb://admin:pwd123@mongodb'
 
 // pass these options to mongo client connect request to avoid DeprecationWarning for current Server Discovery and Monitoring engine
 let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true }
