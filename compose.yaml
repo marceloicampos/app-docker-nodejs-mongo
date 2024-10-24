@@ -1,3 +1,4 @@
+name: my-app
 services:
     # my-app:
     # image: marceloicampos/my-app:1.0
