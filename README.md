@@ -15,7 +15,7 @@ This demo app shows a simple user profile app set up using
 
 Step 1: go to main folder start mongodb and mongo-express on main folder with
 
-    docker compose up
+`docker compose up`
 
 _Access the mongo-express under http://localhost:8081 from your browser login root password 123456_
 
@@ -25,8 +25,11 @@ Step 3: in mongo-express UI - create a new collection "users" in the database "m
 
 Step 4: go to /app folder and start node server on app folder with
 
-    npm install
-    node server.js (or inside the main folder use npm --prefix ./app start)
+`npm install`
+and use the following command
+`node server.js`
+or after npm install go to the main folder and use
+`npm --prefix ./app start`
 
 Step 5: access the nodejs application from browser
 
@@ -34,6 +37,6 @@ _Access http://localhost:3000 from browser_
 
 #### To build a docker image from the application
 
-    docker build -t my-app:1.0 .
+`docker build -t my-app:1.0 .`
 
 The dot " . " at the end of the command denotes location of the Dockerfile
