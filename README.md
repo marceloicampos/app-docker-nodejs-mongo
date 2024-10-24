@@ -26,7 +26,7 @@ Step 3: in mongo-express UI - create a new collection "users" in the database "m
 Step 4: go to /app folder and start node server on app folder with
 
     npm install
-    node server.js
+    node server.js (or inside the main folder use npm --prefix ./app start)
 
 Step 5: access the nodejs application from browser
 
