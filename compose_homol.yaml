@@ -4,8 +4,6 @@ services:
         image: marceloicampos/my-app:1.0
         ports:
         - 3000:3000
-        volumes:
-        - /data/app:/home/app # manually copy the files /data/app
     mongodb:
         container_name: mongo
         image: mongo
