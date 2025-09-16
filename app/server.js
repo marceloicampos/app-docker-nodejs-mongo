@@ -54,11 +54,15 @@ app.post('/update-profile', function (req, res) {
 
         db.collection('users').updateOne(myquery, newvalues, { upsert: true }, function (err, res) {
             if (err) throw err
+			
+			console.log('Document updated successfully');
+			
+			// Send response
+    		res.send(userObj)
+			
             client.close()
         })
     })
-    // Send response
-    res.send(userObj)
 })
 
 app.get('/get-profile', function (req, res) {
