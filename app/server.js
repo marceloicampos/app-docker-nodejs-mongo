@@ -78,6 +78,9 @@ app.get('/get-profile', function (req, res) {
         db.collection('users').findOne(myquery, function (err, result) {
             if (err) throw err
             response = result
+			
+			console.log('Document get successfully');
+			
             client.close()
 
             // Send response
