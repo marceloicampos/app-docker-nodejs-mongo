@@ -23,16 +23,18 @@ app.get('/profile-picture-1', function (req, res) {
 })
 
 app.get('/profile-picture-2', function (req, res) {
-	let img = fs.readFileSync(path.join(__dirname, 'images/profile-2.jpg'))
-	res.writeHead(200, { 'Content-Type': 'image/jpg' })
-	res.end(img, 'binary')
+    let img = fs.readFileSync(path.join(__dirname, 'images/profile-2.jpg'))
+    res.writeHead(200, { 'Content-Type': 'image/jpg' })
+    res.end(img, 'binary')
 })
 
-// use when starting application locally
+// use when starting application only locally
 let mongoUrlLocal = 'mongodb://admin:pwd123@localhost:27017'
 
-// use when starting application as docker container
+// use when starting application only docker container
 let mongoUrlDocker = 'mongodb://admin:pwd123@mongodb'
+
+let mongoUrl = 'mongodb://admin:pwd123@localhost:27017' || 'mongodb://admin:pwd123@mongodb'
 
 // pass these options to mongo client connect request to avoid DeprecationWarning for current Server Discovery and Monitoring engine
 let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true }
@@ -43,7 +45,7 @@ let databaseName = 'my-db'
 app.post('/update-profile', function (req, res) {
     let userObj = req.body
 
-    MongoClient.connect(mongoUrlLocal, mongoClientOptions, function (err, client) {
+    MongoClient.connect(mongoUrl, mongoClientOptions, function (err, client) {
         if (err) throw err
 
         let db = client.db(databaseName)
@@ -54,21 +56,20 @@ app.post('/update-profile', function (req, res) {
 
         db.collection('users').updateOne(myquery, newvalues, { upsert: true }, function (err, res) {
             if (err) throw err
-			
-			console.log('Document updated successfully');
-			
-			// Send response
-    		res.send(userObj)
-			
+
+            console.log('Document updated successfully')
+
             client.close()
         })
     })
+    // Send response
+    res.send(userObj)
 })
 
 app.get('/get-profile', function (req, res) {
     let response = {}
     // Connect to the db
-    MongoClient.connect(mongoUrlLocal, mongoClientOptions, function (err, client) {
+    MongoClient.connect(mongoUrl, mongoClientOptions, function (err, client) {
         if (err) throw err
 
         let db = client.db(databaseName)
@@ -78,9 +79,9 @@ app.get('/get-profile', function (req, res) {
         db.collection('users').findOne(myquery, function (err, result) {
             if (err) throw err
             response = result
-			
-			console.log('Document get successfully');
-			
+
+            console.log('Document get successfully')
+
             client.close()
 
             // Send response
