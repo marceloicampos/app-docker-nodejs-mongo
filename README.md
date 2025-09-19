@@ -13,7 +13,7 @@ This demo app shows a simple user profile app set up using
 
 Step 1: go to main folder /app-docker-nodejs-mongo and start mongodb and mongo-express inside main folder with
 
-    docker-compose -f compose.yaml
+    docker-compose -f compose.yaml up
 
 _Access the mongo-express under http://localhost:8081 from your browser login root password 123456_
 
