@@ -45,6 +45,7 @@ _Access http://localhost:3000 from browser_
 #### To build a docker image from the application
 
     docker build -t marceloicampos/app-docker-nodejs-mongo .
+	
 The dot "." at the end of the command denotes location of the Dockerfile
 
 #### To inspect image from build
