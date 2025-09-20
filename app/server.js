@@ -34,7 +34,7 @@ let mongoUrlLocal = 'mongodb://admin:pwd123@localhost:27017'
 // use when starting application only docker container
 let mongoUrlDocker = 'mongodb://admin:pwd123@mongodb'
 
-let mongoUrl = 'mongodb://admin:pwd123@localhost:27017' || 'mongodb://admin:pwd123@mongodb'
+let mongoUrl = 'mongodb://admin:pwd123@mongodb' || 'mongodb://admin:pwd123@localhost:27017'
 
 // pass these options to mongo client connect request to avoid DeprecationWarning for current Server Discovery and Monitoring engine
 let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true }
