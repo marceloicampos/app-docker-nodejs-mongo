@@ -72,6 +72,7 @@ _Access http://my_ip_server:3000 from browser_
 Then Stop the Container. Note: 'run' just one time, after do 'start' and 'stop'
 
     docker container stop my-app_homol
+	docker container rm my-app_homol
 
 #### To push a docker image to Docker Hub
 
