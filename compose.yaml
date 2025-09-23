@@ -1,10 +1,5 @@
 name: my-app
 services:
-  # my-app:
-  # container_name: my-app_homol
-  # image: marceloicampos/app-docker-nodejs-mongo
-  # ports:
-  # - 3000:3000
   mongodb:
     container_name: mongo
     image: mongo

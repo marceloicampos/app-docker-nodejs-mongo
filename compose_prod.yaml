@@ -1,8 +1,8 @@
-name: my-app_homol
+name: my-app_prod
 services:
   my-app:
-    container_name: my-app_homol
-    image: marceloicampos/app-docker-nodejs-mongo:homol
+    container_name: my-app_prod
+    image: marceloicampos/app-docker-nodejs-mongo:prod
     ports:
       - 3000:3000
   mongodb:
